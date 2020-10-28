@@ -1,0 +1,63 @@
+@import url(//db.onlinewebfonts.com/c/6c79f7fd645c0d39b4ca10428237984a?family=Azo+Sans);
+@font-face {font-family: "Azo Sans"; src: url("//db.onlinewebfonts.com/t/6c79f7fd645c0d39b4ca10428237984a.eot"); src: url("//db.onlinewebfonts.com/t/6c79f7fd645c0d39b4ca10428237984a.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/6c79f7fd645c0d39b4ca10428237984a.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/6c79f7fd645c0d39b4ca10428237984a.woff") format("woff"), url("//db.onlinewebfonts.com/t/6c79f7fd645c0d39b4ca10428237984a.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/6c79f7fd645c0d39b4ca10428237984a.svg#Azo Sans") format("svg"); }
+
+
+
+h3 {
+    font-family:Azo Sans;
+
+}
+
+
+#search-input {
+    font-family:Azo Sans;
+    width: 20%;
+    margin-left: 1%;
+    border-right: 0px;
+    font-size:80%;
+    height: 36px;
+
+}
+select {
+    font-size: 13px;
+    width: 20%;
+    border-color: grey;
+    background: white;
+    font-family:Azo Sans;
+}
+input {
+    border-color: grey;
+    font-family:Azo Sans;
+}
+#search-btn-icon {
+    background: white;
+    border: 1px solid grey;
+    border-left: 0px;
+    font-family:Azo Sans;
+}
+#left-box {
+    display: block;
+    width: 30%;
+    height: 450px;
+    border: 1px solid black;
+    margin-right: 5%;
+    padding: 1%;
+    font-family:Azo Sans;
+}
+#right-box {
+    display: block;
+    width: 70%;
+    font-family:Azo Sans;
+}
+#map-with-search {
+    display: flex;
+    font-family:Azo Sans;
+}
+#map {
+    height: 400px;
+    width: 100%;
+}
+#filters {
+    display: flex;
+    font-family:Azo Sans;
+}
