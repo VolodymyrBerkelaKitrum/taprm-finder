@@ -20,8 +20,8 @@
             <div id="filters">
                 <label for="beers" style="margin: auto 1% auto 0; font-size: 15px;">Filter results by:</label>
                 <select name="beers" id="beers">
-                    <option value="-33.890542, 151.274856">beer1</option>
-                    <option value="-33.923036, 151.259052">beer2</option>
+                    <option>Product</option>
+                    <option>Brewery</option>
                 </select>
                 <label for="cities" style="margin: auto 1%; font-size: 15px;">Select products:</label>
                 <select name="cities" id="cities">

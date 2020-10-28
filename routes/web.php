@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/beer/create', [\App\Http\Controllers\BeerController::class, 'create']);
+
+Route::get('/beer/{beer}', [\App\Http\Controllers\BeerController::class, 'show']);
+
+Route::get('/location/{location}', [\App\Http\Controllers\LocationController::class, 'show']);
+
+
