@@ -5,46 +5,61 @@
 
 h3 {
     font-family:Azo Sans;
-
 }
-
 
 #search-input {
     font-family:Azo Sans;
-    width: 20%;
-    margin-left: 1%;
-    border-right: 0px;
+    width: 33%;
+    margin: auto;
     font-size:80%;
     height: 36px;
+    border: solid 0px;
 
 }
 select {
+    cursor: pointer;
     font-size: 13px;
     width: 20%;
     border-color: grey;
     background: white;
     font-family:Azo Sans;
 }
+#left-box {
+
+}
 input {
-    border-color: grey;
     font-family:Azo Sans;
 }
+
 #search-btn-icon {
+    cursor: pointer;
     background: white;
-    border: 1px solid grey;
-    border-left: 0px;
     font-family:Azo Sans;
+    float: right;
+    border: solid 0px;
+    width: 8%;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHYSURBVHgBtZXLK0RhGMYfoizEykKMhVkJGRuakluJxSwsMBYTC3/F/AOzUbZKWfgLpqxEiRIZ95oal4ySWYgkt9wGz9t5p4yZOReOp37N15n3+57vfb/zvQfIVTkJkihJkVfyROJklnTgjwqQM/JpwTypxS80SK51kSSZJP2kkbSSEJkjD+SD7JAWOFBADdIwStJASvLEybN2ktDNrJMa2JCcQaZEYlBmY46XHMLIKFJgQ1kKqsElqYN9jZJbNfNYBUfVZArOJBlv6NwRs8Bi0qbjBTjTM1nRcR8sTKp0nIJzXeivx8rkXceWh5dHpfr7BguTpI6b4VyZOQlYmGzqWC6ek2zk1ZcWIwe/aBWcCXyEcdHsKgyj1Fuk0s4E6UVysSRtr414aTFpZQg2Ja1BepFkdESGkb90UqKwLi6xchl7SJHZ4t//9JFpGCWTrPbJEozXVN6iJtJJ6nXePYwynZIJsqbrpGEjo4guXKjNyxlIibrIiT67Ibtkm/jNMslIylQBozP3kmryQg7IKomRO507QGaQ/W2RDY6TZbgkuQJ7yM02rht0RZJ1DPnL6qpRNzkvYCSl88Ml+U2MjuGifAWMEnBZcseufpiE8A+Sj6B0DclgTB58AfbljqkLw+XYAAAAAElFTkSuQmCC) no-repeat;
+    margin-right: 1%;
+    background-position: left;" >
 }
+
 #left-box {
     display: block;
-    width: 30%;
+    width: 42%;
     height: 450px;
-    border: 1px solid black;
     margin-right: 5%;
     padding: 1%;
     font-family:Azo Sans;
+    float: left;
+    border-bottom: solid 8px #C4C4C4;
+    border-top: solid 8px #C4C4C4;
+    border-right: solid 8px #C4C4C4;
+    border-left: solid 4px #C4C4C4;
+    direction: rtl;
+    overflow:auto;
 }
 #right-box {
+    margin-left: -4%;
     display: block;
     width: 70%;
     font-family:Azo Sans;
@@ -54,10 +69,74 @@ input {
     font-family:Azo Sans;
 }
 #map {
-    height: 400px;
+    height: 447px;
     width: 100%;
 }
 #filters {
     display: flex;
     font-family:Azo Sans;
+    margin: auto;
+
 }
+.search-block-with-button {
+    display: flex;
+    border: solid 1px gray;
+    margin-left: auto;
+    width: 35%;
+}
+
+#brewery-info-template button {
+    cursor: pointer;
+    margin-top: 3%;
+    width: 38%;
+    font-size: 20px;
+    color: white;
+    background: #FEBD19;
+    height: 17%;
+    border: none;
+}
+
+#name {
+    display: none;
+}
+
+#info-label {
+    padding-left: 5%;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+#main-logo img {
+    padding-left: 3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    height: 58px;
+}
+
+#main-logo h3 {
+    padding-left: 3%;
+    padding-bottom: 2%;
+    text-align: center;
+    padding-left: 24%;
+    font-size: 32px;
+    font-weight: 500;
+}
+#left-box::-webkit-scrollbar {
+    width: 20px;
+    background-color: #F5F5F5;
+}
+#left-box::-webkit-scrollbar-thumb {
+    background-color: #FEBD19;
+
+}
+
+#main-logo a {
+    margin-left: 0.5%;
+    margin-top: 3.2%;
+    font-size: 25px;
+    font-family: 'Roboto';
+}
+
+
+
+
