@@ -17,9 +17,7 @@ class LocationController extends Controller
     }
     public function getAll()
     {
-
         $locations = DB::table('locations')->select('id','title')->get();
-
         return view('welcome', compact('locations'));
     }
 }

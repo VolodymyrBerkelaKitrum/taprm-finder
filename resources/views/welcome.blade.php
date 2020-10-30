@@ -15,58 +15,11 @@
     </span>
     <div id="map-with-search">
         <div id="left-box">
-            <div class="brewery-info-template" id="brewery-info-template">
-                <span id="name">
-                    <h2>
-                        Three’s Brewing
-                    </h2>
-                    <span id="image">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKcAAAADCAYAAAD2mx8UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAlSURBVHgB7dJBAQAACAIxNIf9M9gOavC4Zdj4zwIKrYBS5EStADZFAti1sFJ3AAAAAElFTkSuQmCC">
-                        <br>
-                    </span>
-                    <span id="brewery-image">
-                        <br>
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADXCAYAAABMD14kAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAI0SURBVHgB7dMBAQAgDMCga/9Y76VBBh04u/sGou5AmACkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKR9PGEE+dUK8I8AAAAASUVORK5CYII=">
-                    </span>
-                    <span id="location">
-                        102 St Marks Pl, New York, NY 10009, United States
-                    </span>
-                    <span id="phone">
-                        <br>
-                        +1 347-335-0446
-                        <br>
-                    </span>
-                    <span id="button">
-                        <button onClick="window.open('http://taprm.com');">VIEW INVENTORY</button>
-                    </span>
-                </span>
-            </div>
-            <div class="brewery-info-template" id="brewery-info-template">
-                <span id="name">
-                    <h2>
-                        Three’s Brewing
-                    </h2>
-                    <span id="image">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKcAAAADCAYAAAD2mx8UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAlSURBVHgB7dJBAQAACAIxNIf9M9gOavC4Zdj4zwIKrYBS5EStADZFAti1sFJ3AAAAAElFTkSuQmCC">
-                        <br>
-                    </span>
-                    <span id="brewery-image">
-                        <br>
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADXCAYAAABMD14kAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAI0SURBVHgB7dMBAQAgDMCga/9Y76VBBh04u/sGou5AmACkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKR9PGEE+dUK8I8AAAAASUVORK5CYII=">
-                    </span>
-                    <span id="location">
-                        102 St Marks Pl, New York, NY 10009, United States
-                    </span>
-                    <span id="phone">
-                        <br>
-                        +1 347-335-0446
-                        <br>
-                    </span>
-                    <span id="button">
-                        <button onClick="window.open('http://taprm.com');">VIEW INVENTORY</button>
-                    </span>
-                </span>
-            </div>
+            <?php
+            foreach ($locations as $location) {
+                echo '<div class="brewery-info-template" id="brewery-info-template"><span id="name"><h2>' . $location->title . '</h2><span id="image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKcAAAADCAYAAAD2mx8UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAlSURBVHgB7dJBAQAACAIxNIf9M9gOavC4Zdj4zwIKrYBS5EStADZFAti1sFJ3AAAAAElFTkSuQmCC"><br></span><span id="brewery-image"><br><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADXCAYAAABMD14kAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAI0SURBVHgB7dMBAQAgDMCga/9Y76VBBh04u/sGou5AmACkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKR9PGEE+dUK8I8AAAAASUVORK5CYII="></span><span id="location">' . $location->address . '</span><span id="phone"><br>' . $location->phone . '<br></span><span id="button"><button onClick="window.open(\'http://taprm.com\');">VIEW INVENTORY</button></span></span></div>';
+            }
+            ?>
         </div>
         <div id="right-box">
             <div id="filters">
@@ -83,32 +36,30 @@
                         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
                                 type="text/javascript"></script>
                         <script type="text/javascript">
-                            for (let q = 0; q < 20; ++q) {
-                                $("#left-box").append('<div class="brewery-info-template" id="brewery-info-template"><span id="name"><h2>Three’s Brewing</h2><span id="image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKcAAAADCAYAAAD2mx8UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAlSURBVHgB7dJBAQAACAIxNIf9M9gOavC4Zdj4zwIKrYBS5EStADZFAti1sFJ3AAAAAElFTkSuQmCC"><br></span><span id="brewery-image"><br><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADXCAYAAABMD14kAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAI0SURBVHgB7dMBAQAgDMCga/9Y76VBBh04u/sGou5AmACkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKR9PGEE+dUK8I8AAAAASUVORK5CYII="></span><span id="location">102 St Marks Pl, New York, NY 10009, United States</span><span id="phone"><br>+1 347-335-0446<br></span><span id="button"><button onClick="window.open(\'http://taprm.com\');">VIEW INVENTORY</button></span></span></div>');
-                            }
 
-                            function fillDropdawn(arr, cities) {
-                                arr.forEach(function (item) {
-                                    let optionObj = document.createElement("option");
-                                    optionObj.textContent = item;
-                                    return document.getElementById(cities).appendChild(optionObj);
-                                })
+                            function fillDropdawn(arr, arr2, cities) {
+                                arr.forEach(function (item, index) {
+                                        let optionObj = document.createElement("option");
+                                        optionObj.textContent = item;
+                                        optionObj.value = arr2[index];
+                                        console.log(optionObj, '-----', item, "asdkjasdhaksjdhakjsdkajshdkajsdkajsdkajsdhkajsdh");
+                                        return document.getElementById(cities).appendChild(optionObj);
+                                    })
                             };
-                            //var locationsArray =   <?php //echo json_encode($locations); ?>;
-                            var beersArray = <?php echo json_encode($beers) ?>;
+                            var beersArray = <?= json_encode($beers) ?>;
                             var beerNamesArray = [];
+                            var beerIDsArray = [];
                             var locationsTitlesArray = ['q', 'w'];
-                            //for (let i = 0; i<locationsArray.length; ++i){
-                            // locationsTitlesArray.push(locationsArray[i]['title']);
-                            //}
                             for (let i = 0; i < beersArray.length; ++i) {
                                 beerNamesArray.push(beersArray[i]['name']);
+                                beerIDsArray.push(beersArray[i]['id']);
                             }
+
                             $(document).ready(function () {
                                 $("#beers").val('product');
-                                fillDropdawn(beerNamesArray, "cities");
-                                console.log($("#beers").val());
+                                fillDropdawn(beerNamesArray, beerIDsArray, "cities");
                             });
+
                             $("#beers").on('change', function () {
                                 $("#cities").empty();
                                 console.log($("#beers").val());
@@ -120,6 +71,22 @@
                                 }
                             });
 
+                            $(document).on( "change", "#cities", function(){
+                                console.log('1111')
+                                let id = $("#cities").val();
+                                $.ajax({
+                                    type: "GET",
+                                    url: '/beer/' + id,
+                                }).done(function( response ) {
+                                    var test = Object.keys(response);
+                                    $("#left-box").html("");
+
+                                    for (let q = 0; q < test.length; ++q) {
+                                        $("#left-box").append('<div class="brewery-info-template" id="brewery-info-template"><span id="name"><h2>' + response[q]["title"] + '</h2><span id="image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKcAAAADCAYAAAD2mx8UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAlSURBVHgB7dJBAQAACAIxNIf9M9gOavC4Zdj4zwIKrYBS5EStADZFAti1sFJ3AAAAAElFTkSuQmCC"><br></span><span id="brewery-image"><br><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADXCAYAAABMD14kAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAI0SURBVHgB7dMBAQAgDMCga/9Y76VBBh04u/sGou5AmACkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKR9PGEE+dUK8I8AAAAASUVORK5CYII="></span><span id="location">' + response[q]["address"] + '</span><span id="phone"><br>' + response[q]["phone"] + '<br></span><span id="button"><button onClick="window.open(\'http://taprm.com\');">VIEW INVENTORY</button></span></span></div>');
+                                    }
+                                });
+
+                            });
                         </script>
                     </select>
                 </div>
