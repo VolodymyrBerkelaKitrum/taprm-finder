@@ -19,13 +19,19 @@ h3 {
 select {
     cursor: pointer;
     font-size: 13px;
-    width: 20%;
+    width: 100%;
     border-color: grey;
     background: white;
     font-family:Azo Sans;
 }
 #left-box {
 
+}
+
+#box-select {
+    display: flex;
+    width: 33%;
+    margin: auto 2% auto 0;
 }
 input {
     font-family:Azo Sans;
@@ -45,9 +51,9 @@ input {
 
 #left-box {
     display: block;
-    width: 42%;
+    width: 40%;
     height: 450px;
-    margin-right: 5%;
+    margin-right: 2%;
     padding: 1%;
     font-family:Azo Sans;
     float: left;
@@ -59,9 +65,8 @@ input {
     overflow:auto;
 }
 #right-box {
-    margin-left: -4%;
     display: block;
-    width: 70%;
+    width: 60%;
     font-family:Azo Sans;
 }
 #map-with-search {
@@ -82,43 +87,41 @@ input {
     display: flex;
     border: solid 1px gray;
     margin-left: auto;
-    width: 35%;
+    width: 33%;
 }
 
 #brewery-info-template button {
     cursor: pointer;
     margin-top: 3%;
-    width: 38%;
-    font-size: 20px;
+    width: 40%;
+    font-size: 17px;
     color: white;
     background: #FEBD19;
-    height: 17%;
+    height: 15%;
     border: none;
-}
-
-#name {
-    display: none;
 }
 
 #info-label {
     padding-left: 5%;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 15px;
+}
+
+#main-logo {
+    display: flex;
+    margin-bottom: 2%;
 }
 
 #main-logo img {
-    padding-left: 3%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    height: 58px;
+    height: auto;
+    width: 80%;
+    padding: 1%;
 }
 
 #main-logo h3 {
-    padding-left: 3%;
-    padding-bottom: 2%;
     text-align: center;
-    padding-left: 24%;
-    font-size: 32px;
+    position: absolute;
+    font-size: 30px;
     font-weight: 500;
 }
 #left-box::-webkit-scrollbar {
@@ -137,6 +140,50 @@ input {
     font-family: 'Roboto';
 }
 
+#brewery-info-template {
+    border: solid 1px black;
+    display: flex;
+    direction:ltr;
+    height: 250px;
+}
 
+#name {
+    padding-left: 4%;
+    width: 100%;
+}
+
+#image img {
+    width: 24%;
+}
+
+#brewery-image img {
+    margin-right: 5%;
+    margin-bottom: 5%;
+    float: right;
+    position: relative;
+    bottom: 29%;
+}
+
+#location {
+    color: #6B6356;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+#phone {
+    color: #797979;
+    font-weight: 500;
+    font-size: 17px;
+    display: block;
+}
+
+#main-logo-left {
+    width: 20%;
+    margin: auto 0;
+}
+
+#main-logo-right {
+    width: 80%;
+}
 
 
