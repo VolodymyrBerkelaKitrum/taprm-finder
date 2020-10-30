@@ -19,12 +19,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\BeerController::class, 'getAll']);
 
-Route::post('/', [\App\Http\Controllers\LocationController::class, 'getAll']);
-
-
 Route::get('/beer/create', [\App\Http\Controllers\BeerController::class, 'create']);
 
-Route::get('/beer/{beer}', [\App\Http\Controllers\BeerController::class, 'show']);
+Route::get('/beer/{beer}', [\App\Http\Controllers\BeerController::class, 'showLocationsById']);
 
 Route::get('/location/{location}', [\App\Http\Controllers\LocationController::class, 'show']);
 
