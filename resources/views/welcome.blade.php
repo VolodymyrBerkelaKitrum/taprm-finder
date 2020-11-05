@@ -64,10 +64,10 @@
                                 $("#cities").empty();
                                 console.log($("#beers").val());
                                 if ($("#beers").val() == 'product') {
-                                    fillDropdawn(beerNamesArray, "cities");
+                                    fillDropdawn(beerNamesArray,beerIDsArray, "cities");
                                 } else if ($("#beers").val() == 'brewery') {
                                     $("#cities").empty();
-                                    fillDropdawn(locationsTitlesArray, "cities");
+                                    fillDropdawn(locationsTitlesArray, beerIDsArray, "cities");
                                 }
                             });
 
@@ -81,11 +81,14 @@
                                     var test = Object.keys(response);
                                     $("#left-box").html("");
 
+                                    var MarkersCoordinates  = [];
                                     for (let q = 0; q < test.length; ++q) {
+                                        var coordinates = [response[q]["lat"], response[q]["lon"]];
+                                        MarkersCoordinates.push(coordinates);
                                         $("#left-box").append('<div class="brewery-info-template" id="brewery-info-template"><span id="name"><h2>' + response[q]["title"] + '</h2><span id="image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKcAAAADCAYAAAD2mx8UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAlSURBVHgB7dJBAQAACAIxNIf9M9gOavC4Zdj4zwIKrYBS5EStADZFAti1sFJ3AAAAAElFTkSuQmCC"><br></span><span id="brewery-image"><br><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADXCAYAAABMD14kAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAI0SURBVHgB7dMBAQAgDMCga/9Y76VBBh04u/sGou5AmACkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKQJQJoApAlAmgCkCUCaAKR9PGEE+dUK8I8AAAAASUVORK5CYII="></span><span id="location">' + response[q]["address"] + '</span><span id="phone"><br>' + response[q]["phone"] + '<br></span><span id="button"><button onClick="window.open(\'http://taprm.com\');">VIEW INVENTORY</button></span></span></div>');
                                     }
+                                    setMarkers(MarkersCoordinates);
                                 });
-
                             });
                         </script>
                     </select>
