@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBeersTable extends Migration
+class CreateBreweryLocationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,14 @@ class CreateBeersTable extends Migration
      */
     public function up()
     {
-        Schema::create('beers', function (Blueprint $table) {
+        Schema::create('brewery_locations', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->float('price');
-            $table->bigInteger('brewery_id')->unsigned();
-            $table->foreign('brewery_id')
-                ->references('id')
-                ->on('breweries')
-                ->onCascade('delete');
+            $table->string('title');
+            $table->string('address');
+            $table->string('phone');
+            $table->float('lon');
+            $table->float('lat');
+            $table->string('image_url');
             $table->timestamps();
         });
     }
@@ -33,6 +32,6 @@ class CreateBeersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('beers');
+        Schema::dropIfExists('brewery_locations');
     }
 }

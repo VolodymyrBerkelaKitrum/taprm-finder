@@ -11,8 +11,9 @@ class BeerController extends Controller
     public function create(Request $request)
     {
         $beer = new Beer();
-        $beer->name = 'Corona';
+        $beer->name = 'Test3';
         $beer->price = 10;
+        $beer->brewery_id = 1;
 
         $beer->save();
 
@@ -41,9 +42,9 @@ class BeerController extends Controller
         $beers = Beer::select(['id','name', 'price'])->get();
         $locations = Location::select(['id','title', 'address', 'phone'])->get();
 
-        $a = Beer::find(2);
-        $b = $a->locations;
+//        $a = Beer::find(2);
+//        $b = $a->locations;
 
-        return view('welcome', compact('beers', 'locations', 'b'));
+        return view('welcome', compact('beers', 'locations'));
     }
 }

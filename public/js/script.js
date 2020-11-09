@@ -37,7 +37,7 @@ function setMarkers(cordinates) {
     console.log(cordinates);
 
     const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 2,
+        zoom: 12,
         center: new google.maps.LatLng(cordinates[0][0], cordinates[0][1]),
     });
 
