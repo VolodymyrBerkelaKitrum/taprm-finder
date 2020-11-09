@@ -13,4 +13,8 @@ class Beer extends Model
     {
         return $this->belongsToMany(Location::class);
     }
+
+    public function brewery(){
+        return $this->belongsTo(Brewery::class);
+    }
 }
