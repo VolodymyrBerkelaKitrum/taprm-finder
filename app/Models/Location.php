@@ -13,4 +13,9 @@ class Location extends Model
     {
         return $this->belongsToMany(Beer::class);
     }
+    public function brewery_locations()
+    {
+        return $this->belongsToMany(BreweryLocation::class);
+    }
+
 }

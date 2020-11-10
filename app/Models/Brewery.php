@@ -12,7 +12,7 @@ class Brewery extends Model
     protected $fillable = [
         'title', 'slug', 'body',
     ];
-
+    protected $table = 'breweries';
     public function beers(){
         return $this->hasMany(Beer::class);
     }

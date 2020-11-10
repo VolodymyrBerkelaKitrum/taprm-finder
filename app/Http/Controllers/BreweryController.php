@@ -68,14 +68,8 @@ class BreweryController extends Controller
 
     public function show_beers(Brewery $brewery){
         $beers = $brewery->beers;
-        if(count($beers) > 0){
-            foreach ($beers as $beer) {
-                echo '<p>' . $beer['name'] . ' - ' . $beer['price'] .'</p>' . '<br>';
-            }
-            dd('thats all');
-            return response()->json(['message'=>'Success','data'=>$beers],200);
-        }
-        return response()->json(['message'=>'No Beers Found','data'=>null],200);
+
+        return $beers;
     }
 
     public function show_best_beer(Brewery $brewery){
@@ -103,5 +97,22 @@ class BreweryController extends Controller
             'slug' => 'required|string|min:3|max:25',
             'body' => 'required|string|min:5|max:255',
         ]);
+    }
+    public  function getAll()
+    {
+        $breweries = Brewery::all();
+        $breweryLovcations = BreweryLocation::select(['id','title', 'address', 'phone', 'image_url'])->get();
+
+//        $a = Beer::find(2);
+//        $b = $a->locations;
+
+        return view('welcome', compact('breweries', 'breweryLovcations'));
+    }
+
+    public function showBreweryLocationsById($brewery)
+    {
+        $a = Brewery::find($brewery);
+        $b = $a->brewery_locations;
+        return $b;
     }
 }
