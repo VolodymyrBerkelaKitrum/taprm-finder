@@ -40,7 +40,7 @@ class BeerController extends Controller
     public  function getAll()
     {
         $beers = Beer::select(['id','name', 'price'])->get();
-        $locations = Location::select(['id','title', 'address', 'phone'])->get();
+        $locations = Location::select(['id','title', 'address', 'phone', 'image_url'])->get();
 
 //        $a = Beer::find(2);
 //        $b = $a->locations;
