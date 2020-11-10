@@ -30,11 +30,17 @@ Route::get('/location/{location}', [\App\Http\Controllers\LocationController::cl
 //Route::get('brewery/{brewery}/beers','BreweryController@show_comments');
 //Route::get('brewery/{brewery}/best-beer','BreweryController@show_best_comment');
 
+Route::get('brewery/{brewery}',  [\App\Http\Controllers\BreweryController::class, 'show']);
+
+Route::get('/brewery-search/{breweryID}', [\App\Http\Controllers\BreweryController::class, 'showBreweryLocationsById']);
+
 Route::get('/breweries', [\App\Http\Controllers\BreweryController::class, 'index']);
 
 Route::get('/brewery/{brewery}/beers', [\App\Http\Controllers\BreweryController::class, 'show_beers']);
 
 Route::get('/brewery/create', [\App\Http\Controllers\BreweryController::class, 'create']);
+
+Route::get('/breweryLocation/{breweryLocation}', [\App\Http\Controllers\BreweryLocationController::class, 'show']);
 
 
 Route::delete('/brewery/{brewery}','BreweryController@destroy');

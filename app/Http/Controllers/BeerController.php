@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Beer;
+use App\Models\Brewery;
+use App\Models\BreweryLocation;
 use App\Models\Location;
 use Illuminate\Http\Request;
 
@@ -17,7 +19,7 @@ class BeerController extends Controller
 
         $beer->save();
 
-        $location = Location::find([1, 2]);
+        $location = Location::find([1]);
         $beer->locations()->attach($location);
 
         return 'Success';
@@ -42,9 +44,12 @@ class BeerController extends Controller
         $beers = Beer::select(['id','name', 'price'])->get();
         $locations = Location::select(['id','title', 'address', 'phone', 'image_url'])->get();
 
+        $breweries = Brewery::all();
+        $breweryLovcations = BreweryLocation::select(['id','title', 'address', 'phone', 'image_url'])->get();
+
 //        $a = Beer::find(2);
 //        $b = $a->locations;
 
-        return view('welcome', compact('beers', 'locations'));
+        return view('welcome', compact('beers', 'locations', 'breweries', 'breweryLovcations'));
     }
 }
