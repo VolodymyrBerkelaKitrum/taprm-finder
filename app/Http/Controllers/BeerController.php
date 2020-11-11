@@ -13,13 +13,13 @@ class BeerController extends Controller
     public function create(Request $request)
     {
         $beer = new Beer();
-        $beer->name = 'Test3';
+        $beer->name = 'Stepanivske';
         $beer->price = 10;
         $beer->brewery_id = 1;
 
         $beer->save();
 
-        $location = Location::find([1]);
+        $location = Location::find([13]);
         $beer->locations()->attach($location);
 
         return 'Success';
@@ -45,11 +45,21 @@ class BeerController extends Controller
         $locations = Location::select(['id','title', 'address', 'phone', 'image_url'])->get();
 
         $breweries = Brewery::all();
-        $breweryLovcations = BreweryLocation::select(['id','title', 'address', 'phone', 'image_url'])->get();
+        $breweryLocations = BreweryLocation::select(['id','title', 'address', 'phone', 'image_url', 'lon', 'lat'])->get();
 
 //        $a = Beer::find(2);
 //        $b = $a->locations;
 
-        return view('welcome', compact('beers', 'locations', 'breweries', 'breweryLovcations'));
+        return view('welcome', compact('beers', 'locations', 'breweries', 'breweryLocations'));
+    }
+
+    public function getBeerByName($beer_name){
+        $beers = Beer::where('name', $beer_name)->get();
+        if(count($beers) == 0){
+            return "Empty";
+        } else {
+            return$this->showLocationsById($beers[0]['id']);
+        }
+
     }
 }

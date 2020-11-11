@@ -57,4 +57,13 @@ function setMarkers(cordinates) {
     }
 
 }
+function fillDropdawn(arr, arr2, cities) {
+    arr.forEach(function (item, index) {
+        let optionObj = document.createElement("option");
+        optionObj.textContent = item;
+        optionObj.value = arr2[index];
+        console.log(optionObj, '-----', item, "asdkjasdhaksjdhakjsdkajshdkajsdkajsdkajsdhkajsdh");
+        return document.getElementById(cities).appendChild(optionObj);
+    })
+};
 
