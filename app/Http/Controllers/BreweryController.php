@@ -101,12 +101,12 @@ class BreweryController extends Controller
     public  function getAll()
     {
         $breweries = Brewery::all();
-        $breweryLovcations = BreweryLocation::select(['id','title', 'address', 'phone', 'image_url'])->get();
+        $breweryLocations = BreweryLocation::select(['id','title', 'address', 'phone', 'image_url'])->get();
 
 //        $a = Beer::find(2);
 //        $b = $a->locations;
 
-        return view('welcome', compact('breweries', 'breweryLovcations'));
+        return view('welcome', compact('breweries', 'breweryLocations'));
     }
 
     public function showBreweryLocationsById($brewery)

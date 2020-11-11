@@ -25,6 +25,9 @@ Route::get('/beer/{beer}', [\App\Http\Controllers\BeerController::class, 'showLo
 
 Route::get('/location/{location}', [\App\Http\Controllers\LocationController::class, 'show']);
 
+Route::get('/beer-search/{beer_name}', [\App\Http\Controllers\BeerController::class, 'getBeerByName']);
+
+
 //Route::post('brewery','BreweryController@store');
 //Route::get('brewery/{brewery}','BreweryController@show');
 //Route::get('brewery/{brewery}/beers','BreweryController@show_comments');

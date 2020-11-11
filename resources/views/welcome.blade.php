@@ -19,28 +19,44 @@
         <div id="right-box">
             <div id="filters">
                 <div id="box-select">
-                    <label for="beers" style="margin: auto 1% auto 0; font-size: 15px;">Filter results by:</label>
-                    <select name="beers" id="beers">
+                    <label for="search_by" style="margin: auto 1% auto 0; font-size: 15px;">Filter results by:</label>
+                    <select name="search_by" id="search_by">
                         <option value="default" selected>Filter results by:</option>
                         <option value="product" >Product</option>
                         <option value="brewery">Brewery</option>
                     </select>
                 </div>
                 <div id="box-select">
-                    <label for="cities" style="margin: auto 1%; font-size: 15px;">Select products:</label>
-                    <select name="cities" id="cities">
+                    <label for="products_breweries" id="teeeest" style="margin: auto 1%; font-size: 15px;">Select products:</label>
+                    <select name="products_breweries" id="products_breweries">
                         <option value="default" selected>Select Products</option>
                         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
                                 type="text/javascript"></script>
                         <script type="text/javascript">
 
-                            function fillDropdawn(arr, arr2, cities) {
+                            function returnDiv(div, first, second, third, fourth, fifth ){
+
+                                return $(div).append('<div class="brewery-info-template" id="brewery-info-template"><span id="name"><h2>' + first + '</h2><span id="image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKcAAAADCAYAAAD2mx8UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAlSURBVHgB7dJBAQAACAIxNIf9M9gOavC4Zdj4zwIKrYBS5EStADZFAti1sFJ3AAAAAElFTkSuQmCC"><br></span><span id="brewery-image"><br><img src="' + second + '"></span><span id="location">' + third + '</span><span id="phone"><br>' + fourth + '<br></span><span id="button"><button id="'+fifth+'">VIEW INVENTORY</button></span></span></div>');
+
+                            }
+
+                            function ajaxRequest(i){
+                                $.ajax({
+                                    type: "GET",
+                                    url: '/location/' + i,
+                                }).done(function (test1) {
+                                    $("#left-box").html(test1);
+                                    return test1;
+                                });
+                            }
+
+                            function fillDropdawn(arr, arr2, products_breweries) {
                                 arr.forEach(function (item, index) {
                                         let optionObj = document.createElement("option");
                                         optionObj.textContent = item;
                                         optionObj.value = arr2[index];
                                         console.log(optionObj, '-----', item, "asdkjasdhaksjdhakjsdkajshdkajsdkajsdkajsdhkajsdh");
-                                        return document.getElementById(cities).appendChild(optionObj);
+                                        return document.getElementById(products_breweries).appendChild(optionObj);
                                     })
                             };
                             var beersArray = <?= json_encode($beers) ?>;
@@ -58,38 +74,41 @@
                                 breweryIDsArray.push(locationsTitlesArray[i]['id']);
                             }
 
-                            console.log(breweryNamesArray, "sdjhfjhsdsdfhgsdjhfgsdjhfgsdjhfgsdjhfgjhsdgfjhsdgfsdfj");
-
                             $(document).ready(function () {
-                                $("#beers").val('product');
-                                fillDropdawn(beerNamesArray, beerIDsArray, "cities");
+                                $("#search_by").val('default');
+                                fillDropdawn(beerNamesArray, beerIDsArray, "products_breweries");
                             });
 
-                            $("#beers").on('change', function () {
-                                $("#cities").empty();
-                                console.log($("#beers").val());
-                                if ($("#beers").val() == 'product') {
-                                    fillDropdawn(beerNamesArray,beerIDsArray, "cities");
-                                } else if ($("#beers").val() == 'brewery') {
-                                    $("#cities").empty();
-                                    fillDropdawn(breweryNamesArray, breweryIDsArray, "cities");
+                            $("#search_by").on('change', function () {
+                                $("#products_breweries").empty();
+                                console.log($("#search_by").val());
+                                if ($("#search_by").val() == 'product') {
+                                    fillDropdawn(beerNamesArray,beerIDsArray, "products_breweries");
+                                } else if ($("#search_by").val() == 'brewery') {
+                                    $("#products_breweries").empty();
+                                    fillDropdawn(breweryNamesArray, breweryIDsArray, "products_breweries");
                                 }
+
                             });
 
-                            $(document).on('change', '#beers', function (){
-                                var chosenval = $("#beers").val();
-                                alert(chosenval);
+
+
+                            $(document).on('change', '#search_by', function (){
+                                var chosenval = $("#search_by").val();
+                                console.log(chosenval);
                                 if(chosenval == 'product' ) {
                                     for (let i = 1; i < 5; i++) {
                                         $(document).on("click", "#" + i + "", function () {
-                                            $.ajax({
-                                                type: "GET",
-                                                url: '/location/' + i,
-                                            }).done(function (test1) {
-                                                $("#left-box").html(test1);
-                                                console.log(test1, "asdadasdasdasdasdasdsa", "product");
-                                            });
+                                              var tt =  ajaxRequest(i);
+
                                         });
+                                    }
+                                    $("#teeeest").text("Select beers");
+                                    $(".search-block-with-button").css("display", "flex");
+                                    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                                        $(".search-block-with-button").css("display", "none");
+                                    } else {
+                                        $(".search-block-with-button").css("display", "flex");
                                     }
                                 } else if (chosenval=='brewery') {
                                     for(let i = 1; i <5; i++) {
@@ -99,31 +118,27 @@
                                                 url: '/breweryLocation/' + i,
                                             }).done(function( test1 ) {
                                                 $("#left-box").html(test1);
-                                                console.log(test1, "asdadasdasdasdasdasdsa","Brewery");
                                             });
                                         });
                                     }
+                                    $("#teeeest").text("Select breweries");
+                                    $(".search-block-with-button").css("display", "none");
                                 }
+
                             })
 
 
+                            $(document).on( "click", "#search-btn-icon", function() {
+                                var inputedText = $("#search-input").val()
+                                console.log(inputedText);
+                                $.ajax({
+                                    type: "GET",
+                                    url: '/beer-search/'+inputedText,
+                                }).done(function( response ) {
+                                    if(response == 'Empty'){
+                                        $("#left-box").html("<p style='direction: ltr; text-align: center;'>No results for <b>" + inputedText + "<b></p>");
 
-
-                            $(document).on( "click", "#back", function() {
-                                let id = $("#cities").val();
-
-                                if(id === "default") {
-                                    $("#left-box").html("");
-                                    var response = <?php echo json_encode($locations) ?>;
-                                    var locations_keys = Object.keys(response);
-                                    for(let q = 0; q<locations_keys.length; q++) {
-                                        $("#left-box").append('<div class="brewery-info-template" id="brewery-info-template"><span id="name"><h2>' + response[q]["title"] + '</h2><span id="image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKcAAAADCAYAAAD2mx8UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAlSURBVHgB7dJBAQAACAIxNIf9M9gOavC4Zdj4zwIKrYBS5EStADZFAti1sFJ3AAAAAElFTkSuQmCC"><br></span><span id="brewery-image"><br><img src="' + response[q]["image_url"] + '"></span><span id="location">' + response[q]["address"] + '</span><span id="phone"><br>' + response[q]["phone"] + '<br></span><span id="button"><button id="'+response[q]["id"]+'">VIEW INVENTORY</button></span></span></div>');
-                                    }
-                                } else {
-                                    $.ajax({
-                                        type: "GET",
-                                        url: '/beer/' + id,
-                                    }).done(function( response ) {
+                                    } else {
                                         var test = Object.keys(response);
                                         $("#left-box").html("");
 
@@ -131,19 +146,75 @@
                                         for (let q = 0; q < test.length; ++q) {
                                             var coordinates = [response[q]["lat"], response[q]["lon"]];
                                             MarkersCoordinates.push(coordinates);
-                                            $("#left-box").append('<div class="brewery-info-template" id="brewery-info-template"><span id="name"><h2>' + response[q]["title"] + '</h2><span id="image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKcAAAADCAYAAAD2mx8UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAlSURBVHgB7dJBAQAACAIxNIf9M9gOavC4Zdj4zwIKrYBS5EStADZFAti1sFJ3AAAAAElFTkSuQmCC"><br></span><span id="brewery-image"><br><img src="' + response[q]["image_url"] + '"></span><span id="location">' + response[q]["address"] + '</span><span id="phone"><br>' + response[q]["phone"] + '<br></span><span id="button"><button id="'+response[q]["id"]+'">VIEW INVENTORY</button></span></span></div>');
+                                            returnDiv("#left-box",response[q]["title"],  response[q]["image_url"], response[q]["address"], response[q]["phone"],response[q]["id"] )
                                         }
                                         setMarkers(MarkersCoordinates);
-                                    });
-                                }
+                                    }
 
+                                });
                             });
 
-                            $(document).on( "change", "#cities", function(){
-                                let choosenvariant = $("#beers").val();
+
+                                $(document).on( "click", "#back", function() {
+                                let products_breweries_id = $("#products_breweries").val();
+                                let beer_id = $("#search_by").val();
+                                if(beer_id == 'product'){
+                                    if(products_breweries_id === "default") {
+                                        $("#left-box").html("");
+                                        var response = <?php echo json_encode($locations) ?>;
+                                        var locations_keys = Object.keys(response);
+                                        for(let q = 0; q<locations_keys.length; q++) {
+                                            returnDiv("#left-box",response[q]["title"],  response[q]["image_url"], response[q]["address"], response[q]["phone"],response[q]["id"] )
+                                        }
+                                    } else {
+                                        $.ajax({
+                                            type: "GET",
+                                            url: '/beer/' + products_breweries_id,
+                                        }).done(function( response ) {
+                                            var test = Object.keys(response);
+                                            $("#left-box").html("");
+
+                                            var MarkersCoordinates  = [];
+                                            for (let q = 0; q < test.length; ++q) {
+                                                var coordinates = [response[q]["lat"], response[q]["lon"]];
+                                                MarkersCoordinates.push(coordinates);
+                                                returnDiv("#left-box",response[q]["title"],  response[q]["image_url"], response[q]["address"], response[q]["phone"],response[q]["id"] )
+                                            }
+                                            setMarkers(MarkersCoordinates);
+                                        });
+                                    }
+                                } else if(beer_id == 'brewery') {
+                                    if(beer_id === "default") {
+                                        $("#left-box").html("");
+                                        let id = $("#products_breweries").val();
+                                        var response = <?php echo json_encode($breweryLocations) ?>;
+                                        var locations_keys = Object.keys(response);
+                                        for(let q = 0; q<locations_keys.length; q++) {
+                                            returnDiv("#left-box",response[q]["title"],  response[q]["image_url"], response[q]["address"], response[q]["phone"],response[q]["id"] )
+                                        }
+                                    } else {
+                                        $.ajax({
+                                            type: "GET",
+                                            url: '/brewery-search/' + products_breweries_id,
+                                        }).done(function( response ) {
+                                            var test = Object.keys(response);
+                                            $("#left-box").html("");
+
+                                            var MarkersCoordinates  = [];
+                                            for (let q = 0; q < test.length; ++q) {
+                                                var coordinates = [response[q]["lat"], response[q]["lon"]];
+                                                MarkersCoordinates.push(coordinates);
+                                                returnDiv("#left-box",response[q]["title"],  response[q]["image_url"], response[q]["address"], response[q]["phone"],response[q]["id"] )
+                                            }
+                                            setMarkers(MarkersCoordinates);
+                                        });
+                                    }
+                                }
+                            });
+                            $(document).on( "change", "#products_breweries", function(){
+                                let choosenvariant = $("#search_by").val();
                                 if(choosenvariant=="product") {
-                                    let id = $("#cities").val();
-                                    console.log("Product_________________________________________-");
+                                    let id = $("#products_breweries").val();
                                     $.ajax({
                                         type: "GET",
                                         url: '/beer/' + id,
@@ -154,25 +225,23 @@
                                         for (let q = 0; q < test.length; ++q) {
                                             var coordinates = [response[q]["lat"], response[q]["lon"]];
                                             MarkersCoordinates.push(coordinates);
-                                            $("#left-box").append('<div class="brewery-info-template" id="brewery-info-template"><span id="name"><h2>' + response[q]["title"] + '</h2><span id="image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKcAAAADCAYAAAD2mx8UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAlSURBVHgB7dJBAQAACAIxNIf9M9gOavC4Zdj4zwIKrYBS5EStADZFAti1sFJ3AAAAAElFTkSuQmCC"><br></span><span id="brewery-image"><br><img src="' + response[q]["image_url"] + '"></span><span id="location">' + response[q]["address"] + '</span><span id="phone"><br>' + response[q]["phone"] + '<br></span><span id="button"><button id="'+response[q]["id"]+'">VIEW INVENTORY</button></span></span></div>');
+                                            returnDiv("#left-box",response[q]["title"],  response[q]["image_url"], response[q]["address"], response[q]["phone"],response[q]["id"] )
                                         }
                                         setMarkers(MarkersCoordinates);
                                     });
                                 } else if (choosenvariant=="brewery") {
-                                    let id = $("#cities").val();
-                                    console.log("Brewery_________________________________________-");
+                                    let id = $("#products_breweries").val();
                                     $.ajax({
                                         type: "GET",
                                         url: '/brewery-search/' + id,
                                     }).done(function( response ) {
                                         var test = Object.keys(response);
                                         $("#left-box").html("");
-
                                         var MarkersCoordinates  = [];
                                         for (let q = 0; q < test.length; ++q) {
                                             var coordinates = [response[q]["lat"], response[q]["lon"]];
                                             MarkersCoordinates.push(coordinates);
-                                            $("#left-box").append('<div class="brewery-info-template" id="brewery-info-template"><span id="name"><h2>' + response[q]["title"] + '</h2><span id="image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKcAAAADCAYAAAD2mx8UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAlSURBVHgB7dJBAQAACAIxNIf9M9gOavC4Zdj4zwIKrYBS5EStADZFAti1sFJ3AAAAAElFTkSuQmCC"><br></span><span id="brewery-image"><br><img src="' + response[q]["image_url"] + '"></span><span id="location">' + response[q]["address"] + '</span><span id="phone"><br>' + response[q]["phone"] + '<br></span><span id="button"><button id="'+response[q]["id"]+'">VIEW INVENTORY</button></span></span></div>');
+                                            returnDiv("#left-box",response[q]["title"],  response[q]["image_url"], response[q]["address"], response[q]["phone"],response[q]["id"] )
                                         }
                                         setMarkers(MarkersCoordinates);
                                     });
@@ -194,9 +263,9 @@
             </div>
             <br>
             <span id="info-label">*Please be sure to call the locations ahead of time as some may be seasonal or out of stock. </span>
-
         </div>
     </div>
 </div>
+
 
 
